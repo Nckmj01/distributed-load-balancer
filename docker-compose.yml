@@ -1,0 +1,44 @@
+version: "3.8"
+
+services:
+  load-balancer:
+    build:
+      context: .
+      dockerfile: load_balancer/Dockerfile
+    container_name: load-balancer
+    ports:
+      - "5001:5001"
+    depends_on:
+      - server1
+      - server2
+      - server3
+
+  server1:
+    build:
+      context: .
+      dockerfile: server/Dockerfile
+    container_name: server1
+    environment:
+      SERVER_ID: 1
+    ports:
+      - "5000:5000"
+
+  server2:
+    build:
+      context: .
+      dockerfile: server/Dockerfile
+    container_name: server2
+    environment:
+      SERVER_ID: 2
+    ports:
+      - "5002:5000"
+
+  server3:
+    build:
+      context: .
+      dockerfile: server/Dockerfile
+    container_name: server3
+    environment:
+      SERVER_ID: 3
+    ports:
+      - "5003:5000"
