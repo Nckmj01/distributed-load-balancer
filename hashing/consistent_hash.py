@@ -3,11 +3,11 @@ K = 9        # Virtual servers per physical server
 
 
 def H(request_id):
-    return (request_id**2 + 2*request_id + 17) % M
+    return (131 * request_id + 17) % M
 
 
 def Phi(server_id, virtual_id):
-    return (server_id**2 + virtual_id**2 + 2*virtual_id + 25) % M
+    return (97 * server_id + 131 * virtual_id + 17) % M
 
 
 class ConsistentHash:
