@@ -1,5 +1,6 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
+*.py[cod]
 *.py[codz]
 *$py.class
 
@@ -221,6 +222,7 @@ __marimo__/
 __pycache__/
 *.py[cod]
 .pytest_cache/
+__pycache__
 
 # Virtual environment
 venv/
