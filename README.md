@@ -83,11 +83,17 @@ install the project dependencies:
 pip install -r requirements.txt
 ```
 
-## Running the Project
+## Running the Project with Docker:
 ```bash
 make build
 make up
 ```
+## Running the Project locally:
+```bash
+make run
+```
+
+
 ## API Endpoints
 | Method | Endpoint     | Purpose                 |
 | ------ | ------------ | ----------------------- |
